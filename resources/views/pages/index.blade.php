@@ -1,6 +1,9 @@
-@include('parts/header')
+@extends('layouts.app')
 
- <main class="py-16 lg:py-20">
+@section('title', 'Главная')
+
+@section('content')
+    <main class="py-16 lg:py-20">
 	 <div class="container">
 
 		<section>
@@ -127,5 +130,5 @@
 
 	</div>
  </main>
+@endsection
 
-@include('parts/footer')

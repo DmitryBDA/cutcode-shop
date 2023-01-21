@@ -3,6 +3,7 @@
 use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\GitHubController;
 use App\Http\Controllers\IndexController;
 use Illuminate\Support\Facades\Route;
 
@@ -38,3 +39,6 @@ Route::middleware('guest')->group(function () {
 Route::get('/forgot', [AuthController::class, 'forgot'])->name('forgot');
 Route::get('/forgotsuccess', [AuthController::class, 'forgotsuccess'])->name('forgotsuccess');
 Route::post('/forgot', [AuthController::class, 'forgotProcess'])->name('forgot.process');
+
+Route::get('auth/github', [GitHubController::class, 'gitRedirect'])->name('github');
+Route::get('auth/github/callback', [GitHubController::class, 'gitCallback']);

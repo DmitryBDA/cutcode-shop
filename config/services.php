@@ -31,4 +31,10 @@ return [
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
 
+    'github' => [
+        'client_id' => '7ae01795427b184c8135',
+        'client_secret' => '319bec390e200cc7e2c654d37568a3ff15d31e0e',
+        'redirect' => 'http://cutcode.shop.loc/auth/github/callback',
+    ],
+
 ];

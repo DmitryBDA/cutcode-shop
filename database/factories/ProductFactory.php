@@ -23,11 +23,12 @@ class ProductFactory extends Factory
         $description = $this->faker->realText(rand(1000, 2000));
 
         return [
-            'category_id' => rand(1, 11),
+            'category_id' => rand(1, 10),
             'active' => true,
             'name' => $name,
             'slug' => Str::slug($name),
             'description' => $description,
+            'price' => rand(1000, 10000),
         ];
     }
 }

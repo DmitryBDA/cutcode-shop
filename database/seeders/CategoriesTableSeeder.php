@@ -16,22 +16,25 @@ class CategoriesTableSeeder extends Seeder
      */
     public function run()
     {
+        $names = [
+            'Мыши',
+            'Клавиатуры',
+            'Наушники',
+            'Поверхности',
+            'Мониторы',
+            'Геймпады',
+            'Консоли',
+            'Акустика',
+            'Аксесуары',
+            'Распродажа',
+        ];
         $categories = [];
 
-        $cName = 'Без категории';
-        $categories[] = [
-            'name' => $cName,
-            'slug' => Str::slug($cName),
-            'parent_id' => 0,
-        ];
-
-        for ($i = 1; $i <= 10; $i++) {
-            $cName = 'Категория №' . $i;
-            $parentId = ($i > 4) ? rand(1, 4) : 1;
+        foreach ($names as $key => $name) {
             $categories[] = [
-                'name' => $cName,
-                'slug' => Str::slug($cName),
-                'parent_id' => $parentId,
+                'name' => $name,
+                'slug' => Str::slug($name),
+                'parent_id' => 0,
             ];
         }
 

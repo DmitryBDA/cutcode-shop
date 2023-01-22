@@ -13,27 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('products', function (Blueprint $table) {
-            $table->id();
-
-            $table->integer('category_id')->unsigned();
-
-            $table->string('slug')->unique();
-            $table->string('name');
-            $table->boolean('active')->default(true);
-
-            $table->float('price');
+        Schema::table('brands', function (Blueprint $table) {
             $table->boolean('show_main')->default(false);
             $table->unsignedInteger('sort_order')->default(0);
-
             $table->string('preview_image')->nullable();
-
-            $table->text('description');
-
-            $table->timestamps();
-            $table->softDeletes();
-
-            $table->foreign('category_id')->references('id')->on('categories');
         });
     }
 
@@ -44,6 +27,10 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('products');
+        Schema::table('brands', function (Blueprint $table) {
+            $table->dropColumn('show_main');
+            $table->dropColumn('sort_order');
+            $table->dropColumn('preview_image');
+        });
     }
 };

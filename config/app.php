@@ -197,6 +197,7 @@ return [
 
         \Laravel\Socialite\SocialiteServiceProvider::class,
         \App\Providers\ComposerServiceProvider::class,
+        \App\Providers\ActionServiceProvider::class
 
     ],
 

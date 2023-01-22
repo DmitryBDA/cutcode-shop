@@ -18,7 +18,7 @@ class MenuComposer
     public function __construct()
     {
         $this->menu = $this->menu();
-        $this->path = $this->path();
+//        $this->path = $this->path();
     }
     public function path()
     {
@@ -41,6 +41,6 @@ class MenuComposer
     public function compose(View $view)
     {
         $view->with('menu', $this->menu);
-        $view->with('path', $this->path);
+//        $view->with('path', $this->path);
     }
 }

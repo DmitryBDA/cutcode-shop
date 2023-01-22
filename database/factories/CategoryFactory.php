@@ -8,7 +8,7 @@ use Illuminate\Support\Str;
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Brand>
  */
-class BrandFactory extends Factory
+class CategoryFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -18,12 +18,11 @@ class BrandFactory extends Factory
     public function definition()
     {
         $name = $this->faker->name(rand(5,10));
-        $description = $this->faker->realText(rand(1000, 2000));
 
         return [
             'name' => $name,
             'slug' => Str::slug($name),
-            'description' => $description,
+            'parent_id' => 0,
             'show_main' => true,
         ];
     }

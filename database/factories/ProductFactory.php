@@ -29,6 +29,7 @@ class ProductFactory extends Factory
             'slug' => Str::slug($name),
             'description' => $description,
             'price' => rand(1000, 10000),
+            'show_main' => true,
         ];
     }
 }
